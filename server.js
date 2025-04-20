@@ -29,7 +29,7 @@ const connectedSockets = [
     // userName, socketID
 ]
 
-const io = socketIO(expressServer);
+const io = socketIO(app);
 io.on('connection',(socket)=> {
     // console.log("Someone has connected.")
 
@@ -111,4 +111,4 @@ io.on('connection',(socket)=> {
     })
 })
 
-expressServer.listen(8001, '0.0.0.0')
+app.listen(8001, '0.0.0.0')
