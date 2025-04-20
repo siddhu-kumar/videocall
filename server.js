@@ -1,8 +1,9 @@
 
 const https = require("node:https")
+const http = require("node:http")
 const express = require("express")
 const fs = require("node:fs")
-const app = express()
+let app = express()
 const socketIO = require("socket.io")
 const path = require('node:path')
 app.use(express.static(__dirname))
@@ -14,7 +15,7 @@ app.use(express.static(__dirname))
 // const cert = fs.readFileSync(path.join(__dirname,'localhost.pem'))
 
 // const expressServer = https.createServer({key : key, cert : cert},app)
-
+app = http.createServer(app)
 // offers will contain {}
 const offers = [
     // offererUserName,
