@@ -148,7 +148,8 @@ const createPeerConnection = async (offerObj) => {
         resolve();
     }) 
 }
-const addNewIceCandidate = (iceCandidate) => {
+
+export const addNewIceCandidate = (iceCandidate) => {
     peerConnection.addIceCandidate(iceCandidate); 
 }
 
