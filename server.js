@@ -10,10 +10,10 @@ app.use(express.static(__dirname))
 // const key = fs.readFileSync('cert.key')
 // const cert = fs.readFileSync('cert.crt')
 
-const key = fs.readFileSync(path.join(__dirname, 'localhost-key.pem'))
-const cert = fs.readFileSync(path.join(__dirname,'localhost.pem'))
+// const key = fs.readFileSync(path.join(__dirname, 'localhost-key.pem'))
+// const cert = fs.readFileSync(path.join(__dirname,'localhost.pem'))
 
-const expressServer = https.createServer({key : key, cert : cert},app)
+// const expressServer = https.createServer({key : key, cert : cert},app)
 
 // offers will contain {}
 const offers = [
