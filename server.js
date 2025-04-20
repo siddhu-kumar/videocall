@@ -1,11 +1,13 @@
 
 const https = require("node:https")
 const http = require("node:http")
+const cors = require("cors")
 const express = require("express")
 const fs = require("node:fs")
 let app = express()
 const socketIO = require("socket.io")
 const path = require('node:path')
+app.use(cors())
 app.use(express.static(__dirname))
 
 // const key = fs.readFileSync('cert.key')
@@ -30,7 +32,14 @@ const connectedSockets = [
     // userName, socketID
 ]
 
-const io = socketIO(app);
+const io = socketIO(app,
+    {
+        cors: '*',
+        methods: ['GET', 'POST'],
+        allowedHeaders: ['Content-Type'],
+        credentials: true,
+      }
+);
 io.on('connection',(socket)=> {
     // console.log("Someone has connected.")
 

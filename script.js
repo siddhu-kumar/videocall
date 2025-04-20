@@ -1,11 +1,13 @@
-
+import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+  
+// const socket = io();
 const userName = "Hello-World*" + Math.floor(Math.random()*1000);
 const password = "x";
 
 document.querySelector("#user-name").innerHTML = userName;
 
 
-const socket = io.connect("https://192.168.1.9:8001/", {
+const socket = io.connect("https://videocall-ayx0.onrender.com/", {
     auth: {
         userName,
         password,
