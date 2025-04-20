@@ -77,12 +77,12 @@ const hangup = async (e) => {
     console.log(c )
 }
 
-const addAnswer = async (offerObj) => {
+export const addAnswer = async (offerObj) => {
     await peerConnection.setRemoteDescription(offerObj.answer)
     // console.log(peerConnection.signalingState)
 }
 
-const answerOffer = async (offerObj) => {
+export const answerOffer = async (offerObj) => {
     await fetchUserMedia();
     await createPeerConnection(offerObj);
 

@@ -1,4 +1,4 @@
-import { socket } from "./script.js"
+import { socket, addAnswer, answerOffer, addNewIceCandidate } from "./script.js"
 socket.on('availableOffers', (offers) => {
     console.log(offers)
     createOfferEls(offers)
