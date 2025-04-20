@@ -7,7 +7,7 @@ const password = "x";
 document.querySelector("#user-name").innerHTML = userName;
 
 
-const socket = io.connect("https://videocall-ayx0.onrender.com/", {
+export const socket = io.connect("https://videocall-ayx0.onrender.com/", {
     auth: {
         userName,
         password,
@@ -55,7 +55,7 @@ const fetchUserMedia = async () => {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({
                 video: true,
-                // audio: true,
+                audio: true,
             })
             localVideoEl.srcObject = stream;
             localStream = stream;
